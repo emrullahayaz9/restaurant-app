@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu.html</title>
+  </head>
+  <body>
+    <div>MENU</div>
+    <form action="" method="post">
+      {% csrf_token %}
+    <div>
+      
+        <div><h1>FOODS</h1>
+          {% for food in foods %} 
+          <h3>
+          <label for="food">
+            <input type="checkbox" name="{{food.food_name}}"> 
+            <input type="hidden" name="food" value = "{{food.food_name}}">
+            {{food.food_name}}
+           </label>
+          </h3>
+        {% endfor %}
+      </div>
+    </div>
+    <div><h1>DRINKS</h1>
+      <div>
+          {% for drink in drinks %} 
+              <label for="drink">
+                <h3>  
+                  <input type="checkbox" name="{{drink.drink_name}}">
+                  
+                  <input type="hidden" name="drink" value = "{{drink.drink_name}}">
+                  {{drink.drink_name}}
+                </h3>
+              </label>
+           {% endfor %} 
+      </div>
+    </div>
+    <div><h1>SALADS</h1>
+      <div>
+          {% for salad in salads %} 
+          <label for="salad"> 
+            
+            <h3>
+              <input type="checkbox" name="{{salad.salad_name}}">
+              <input type="hidden" name="salad" value = "{{salad.salad_name}}">
+              {{salad.salad_name}}
+            </h3>
+          </label> 
+          {% endfor %} 
+    </div>
+  </div>
+  <div><h1>DESERTS</h1>
+      <div>{% for desert in deserts %}
+         <label for="desert">
+          <h3>
+            <input type="checkbox" name = "{{desert.desert_name}}">
+            <input type="hidden" name = "desert" value = "{{desert.desert_name}}">
+            {{desert.desert_name}}
+         </h3>
+        </label> 
+         {% endfor %}
+    </div>
+    <button type="submit" >ORDER</button>
+  </div>
+    </form>
+     
+  </body>
+</html>

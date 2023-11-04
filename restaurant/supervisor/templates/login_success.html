@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/supervisor/logout" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <h1>Successfuly loged in</h1>
+    SOME MANAGEMENT OPERATION
+    {% for order in orders %}
+       <div> {{order}}</div>
+    {% endfor %}
+    <h1>Active Tables</h1>
+    {{active_tables}}
+
+    <h1>INSTANT ORDERS</h1>
+    {{order_set}}
+    <h4><a href="http://127.0.0.1:8000/supervisor/delete_instants">Delete all instant orders</a></h4>
+
+</body>
+</html>

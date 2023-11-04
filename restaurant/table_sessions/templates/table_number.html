@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table number</title>
+</head>
+<body>
+    <h3>enter your table number</h3>
+    <form action="" method="post">
+        {% if boolean %}
+       <div>     <h2>{{error}}</h2>  </div>
+        {% endif %}
+        {% csrf_token %}
+        Table number password: <input type="text" name="table_number">
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
